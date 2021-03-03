@@ -71,7 +71,7 @@ class StudentMainDrawer extends StatelessWidget {
 
       ListTile(
         onTap: () {
-
+          Navigator.pushNamed(context, '/StudentExamPage');
         },
         leading: Icon(
           Icons.exit_to_app,

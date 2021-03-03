@@ -16,18 +16,18 @@ class StudentPage extends StatelessWidget {
       body: ListView(
         padding: EdgeInsets.all(16),
         children: [
-          subject('Mathematics','https://images.theconversation.com/files/139426/original/image-20160927-14593-1rf92dt.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop'),
-          subject('Science','https://img.freepik.com/free-photo/multi-colored-dust-splash-black-background-painted-holi_36326-3565.jpg?size=626&ext=jpg'),
-          subject('English','https://t4.ftcdn.net/jpg/01/71/57/89/360_F_171578974_eNhE6sEpc6jsK6Py7IxhTbIZZQ7878Wb.jpg'),
-          subject('Social Studies','https://ssir.org/images/blog/SERIES-civil-society-Dan-Cardinali-equity-power-sharing592x333.jpg'),
-          subject('Hindi','https://thumbs.dreamstime.com/b/flag-india-indian-national-background-43514001.jpg'),
+          subject(context,'Mathematics','https://images.theconversation.com/files/139426/original/image-20160927-14593-1rf92dt.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop'),
+          subject(context,'Science','https://img.freepik.com/free-photo/multi-colored-dust-splash-black-background-painted-holi_36326-3565.jpg?size=626&ext=jpg'),
+          subject(context,'English','https://t4.ftcdn.net/jpg/01/71/57/89/360_F_171578974_eNhE6sEpc6jsK6Py7IxhTbIZZQ7878Wb.jpg'),
+          subject(context,'Social Studies','https://ssir.org/images/blog/SERIES-civil-society-Dan-Cardinali-equity-power-sharing592x333.jpg'),
+          subject(context,'Hindi','https://thumbs.dreamstime.com/b/flag-india-indian-national-background-43514001.jpg'),
         ],
       ),
       floatingActionButton: FloatingActionButton(onPressed: (){Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>Home()));},child: Icon(Icons.home),),
     );
   }
 
-  Widget subject(String sub, String img) => Card(
+  Widget subject(BuildContext context,String sub, String img) => Card(
     clipBehavior: Clip.antiAlias,
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(24),
@@ -41,7 +41,7 @@ class StudentPage extends StatelessWidget {
           ),
           // colorFilter: ColorFilters.greyscale,
           child: InkWell(
-            onTap: () {},
+            onTap: () {Navigator.pushNamed(context, '/StudentExamPage');},
           ),
           height: 180,
           fit: BoxFit.cover,

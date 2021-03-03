@@ -1,4 +1,5 @@
 import 'package:exam_portal/screens/class_page.dart';
+import 'package:exam_portal/screens/student_exam_page.dart';
 import 'package:exam_portal/screens/student_page.dart';
 import 'package:exam_portal/screens/teacher_page.dart';
 import 'package:flutter/material.dart';
@@ -18,11 +19,12 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: TeacherPage(),
+      home: Home(),
       routes: {
         '/StudentPage':(context)=>StudentPage(),
         '/TeacherPage':(context)=>TeacherPage(),
-        '/ClassPage': (context)=>ClassPage()
+        '/ClassPage': (context)=>ClassPage(),
+        '/StudentExamPage':(context)=>StudentExamPage()
       },
       debugShowCheckedModeBanner: false,
     );
